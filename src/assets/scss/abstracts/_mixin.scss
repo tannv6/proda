@@ -1,0 +1,183 @@
+
+
+@mixin desktop {
+  @media (min-width: #{$tablet}) {
+      @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$mobile}) and (max-width: #{$tablet - 1px}) {
+    
+      @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: #{$mobile - 1px}) {
+    
+      @content;
+  }
+}
+@mixin flexVal($disp:flex, $justi:start, $align:start, $fleWrap:nowrap) {
+  display: -webkit-box;
+  display: -moz-box;
+  display: $disp;
+  display: -ms-+$disp+box;
+  justify-content: $justi;
+  -webkit-box-pack: $justi;
+  -ms-flex-pack: $justi;
+  align-items: $align;
+  -webkit-box-align: $align;
+  -ms-flex-align: $align;
+  -moz-flex-wrap: $fleWrap;
+  -ms-flex-wrap: $fleWrap;
+  flex-wrap: $fleWrap;
+}
+
+@mixin bgCustom($url:'', $repeat:no-repeat, $position:center, $size:cover) {
+  background: url($url) $repeat $position / $size;
+}
+
+@mixin border($width:1px, $color:#dbdbdb) {
+  border: $width solid $color;
+}
+
+
+@mixin positionCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin positionXCenter {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@mixin positionYCenter {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+
+@mixin positionCustom($top:0, $left:0, $tranX:0, $tranY:0) {
+  position: absolute;
+  top: $top;
+  left: $left;
+  transform: translate($tranX, $tranY);
+}
+
+
+@mixin box-default($padding, $margin) {
+  padding: $padding;
+  margin-bottom: $margin;
+}
+
+@mixin list-group-item-variant($state, $background, $color) {
+  .list-group-item-#{$state} {
+    color: $color;
+    background-color: $background;
+
+    &.list-group-item-action {
+
+      &:hover,
+      &:focus {
+        color: $color;
+        background-color: shade-color($background, 10%);
+      }
+
+      &.active {
+        color: $white;
+        background-color: $color;
+        border-color: $color;
+      }
+    }
+  }
+}
+
+
+@mixin font(
+  $style: normal,
+  $weight: normal,
+  $size: 1rem,
+  $family: $basic-font
+) {
+  font: {
+    style: $style;
+    weight: $weight;
+    size: $size;
+    family: $family;
+  }
+}
+
+@mixin footStyle($padding-top: 3rem, $padding-bottom: 5rem, $font-size: $footer-font-size-pc, $footer-bg-color: $white, $color:$gray-7575){
+  background-color: $footer-bg-color;
+  padding-top: $padding-top;
+  padding-bottom: $padding-bottom;
+  color: $color;
+  font-size: $font-size;
+}
+@mixin listMark($url, $fontFamily:inherit, $color: inherit) {
+  padding-left: .8em;
+  &::after {
+  content: $url;
+  color: $color;
+  font-family: $fontFamily;
+  @include positionCustom();
+  @content;
+  }
+}
+
+
+
+@mixin make-row($gutter: $grid-gutter-width) {
+  --#{$prefix}gutter-x: #{$gutter};
+  --#{$prefix}gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  // TODO: Revisit calc order after https://github.com/react-bootstrap/react-bootstrap/issues/6039 is fixed
+  margin-top: calc(-1 * var(--#{$prefix}gutter-y)); // stylelint-disable-line function-disallowed-list
+  margin-right: calc(-.5 * var(--#{$prefix}gutter-x)); // stylelint-disable-line function-disallowed-list
+  margin-left: calc(-.5 * var(--#{$prefix}gutter-x)); // stylelint-disable-line function-disallowed-list
+}
+
+@mixin make-col-ready($width: 50%, $fix-width: 50%, ) {
+  // Add box sizing if only the grid is loaded
+  box-sizing: if(variable-exists(include-column-box-sizing) and $include-column-box-sizing, border-box, null);
+  // Prevent columns from becoming too narrow when at smaller grid tiers by
+  // always setting `width: 100%;`. This works because we set the width
+  // later on to override this initial width.
+  flex-shrink: 0;
+  width: calc(#{$width});
+  max-width: $fix-width; // Prevent `.col-auto`, `.col` (& responsive variants) from breaking out the grid
+  padding-right: calc(var(--#{$prefix}gutter-x) * .5); // stylelint-disable-line function-disallowed-list
+  padding-left: calc(var(--#{$prefix}gutter-x) * .5); // stylelint-disable-line function-disallowed-list
+  margin-top: var(--#{$prefix}gutter-y);
+}
+
+
+// box-shadow
+@mixin box-shadow($shadow...) {
+  @if $enable-shadows {
+    $result: ();
+
+    @each $value in $shadow {
+      @if $value != null {
+        $result: append($result, $value, "comma");
+      }
+      @if $value == none and length($shadow) > 1 {
+        @warn "The keyword 'none' must be used as a single argument.";
+      }
+    }
+
+    @if (length($result) > 0) {
+      box-shadow: $result;
+    }
+  }
+}

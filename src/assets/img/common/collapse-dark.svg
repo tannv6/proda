@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>collapse-dark</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="🔶----main" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.5">
+        <g id="main_3_full" transform="translate(-222.000000, -531.000000)" fill="#202A44" fill-rule="nonzero">
+            <g id="sidebar">
+                <g id="other-companies" transform="translate(0.000000, 519.000000)">
+                    <g id="collapsed">
+                        <g id="icons/info" transform="translate(222.000000, 12.000000)">
+                            <path d="M13,10 L13,10 C13.3905243,9.60947571 13.3905243,8.97631073 13,8.58578644 L8,3.58578644 L3,8.58578644 C2.60947571,8.97631073 2.60947571,9.60947571 3,10 L3,10 C3.39052429,10.3905243 4.02368927,10.3905243 4.41421356,10 L8,6.41421356 L11.5857864,10 C11.9763107,10.3905243 12.6094757,10.3905243 13,10 Z" id="Mask"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

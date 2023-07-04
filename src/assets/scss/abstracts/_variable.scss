@@ -1,0 +1,567 @@
+// Color system
+$bg-fafa: #fafafa !default;
+$bg-f9f9: #f9f9f9 !default;
+$bg-f5f5: #f5f5f5 !default;
+$bg-f4f4: #f4f4f4 !default;
+$bg-f2f2: #f2f2f2 !default;
+// scss-docs-end gray-color-variables
+
+// fusv-disable
+// scss-docs-start gray-colors-map
+$bg: (
+    "100": $bg-fafa,
+    "200": $bg-f9f9,
+    "300": $bg-f5f5,
+    "400": $bg-f4f4,
+    "500": $bg-f2f2,
+) !default;
+
+// scss-docs-start gray-color-variables
+$white: #fff !default;
+$gray-eee: #eeeeee !default;
+$gray-dbdb: #dbdbdb !default;
+$gray-bbb: #bbbbbb !default;
+$gray-999: #999999 !default;
+$gray-7575: #757575 !default;
+$gray-666: #666666 !default;
+$gray-4545: #454545 !default;
+$gray-333: #333333 !default;
+$gray-2525: #252525 !default;
+$black: #000 !default;
+// scss-docs-end gray-color-variables
+
+// fusv-disable
+// scss-docs-start gray-colors-map
+$grays: (
+    "100": $gray-eee,
+    "200": $gray-dbdb,
+    "300": $gray-bbb,
+    "400": $gray-999,
+    "500": $gray-7575,
+    "600": $gray-666,
+    "700": $gray-4545,
+    "800": $gray-333,
+    "900": $gray-2525,
+) !default;
+// scss-docs-end gray-colors-map
+// fusv-enable
+
+// scss-docs-start color-variables
+$point: #01d8df !default;
+$point2: #e14323 !default;
+$point3: #6058d5 !default;
+$point4: #6a5fe1 !default;
+$point5: #525dc2 !default;
+$blue: #096ac5 !default;
+$blue2: #2c5be4 !default;
+$blue3: #3942be !default;
+$red: #ed5669 !default;
+$green: #2ace92 !default;
+$purple: #8f65fc !default;
+$orange: #ff8626;
+$error: #ee0505;
+$kakao-bg: #fee500;
+$kakao-text: #381e1f;
+$naver-bg: #1ec800;
+$naver-text: #fff;
+// scss-docs-end color-variables
+
+// scss-docs-start colors-map
+$colors: (
+    "point": $point,
+    "error": $error,
+    "point2": $point2,
+    "point3": $point3,
+    "point4": $point4,
+    "point5": $point5,
+    "blue": $blue,
+    "blue2": $blue2,
+    "blue3": $blue3,
+    "green": $green,
+    "purple": $purple,
+    "orange": $orange,
+    "red": $red,
+    "white": $white,
+    "gray": $gray-4545,
+    "gray-dark": $gray-2525,
+    "naver-bg": $naver-bg,
+    "kakao-bg": $kakao-bg,
+    "naver-text": $naver-text,
+    "kakao-text": $kakao-text,
+) !default;
+// scss-docs-end colors-map
+
+$variable-prefix: bs- !default; // Deprecated in v5.2.0 for the shorter `$prefix`
+$prefix: $variable-prefix !default;
+
+// scss-docs-start font-variables
+// stylelint-disable value-keyword-case
+$font-family-sans-serif: "Noto Sans KR", sans-serif !default;
+$font-family-point: "yg-jalnan", sans-serif !default;
+$font-family-nanum: "NanumSquare", sans-serif !default;
+// stylelint-enable value-keyword-case
+$font-family-base: var(--#{$prefix}font-sans-serif) !default;
+$font-family-code: var(--#{$prefix}font-point) !default;
+
+// $font-size-root affects the value of `rem`, which is used for as well font sizes, paddings, and margins
+// $font-size-base affects the font size of the body text
+$font-size-root: null !default;
+$font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
+$font-size-sm: $font-size-base * 0.875 !default;
+$font-size-lg: $font-size-base * 1.25 !default;
+
+$fw-lighter: lighter !default;
+$fw-light: 300 !default;
+$fw-normal: 400 !default;
+$fw-medium: 500 !default;
+$fw-semibold: 600 !default;
+$fw-bold: 700 !default;
+$fw-bolder: bolder !default;
+
+$fw-base: $fw-normal !default;
+
+$line-height-base: 1 !default;
+$line-height-sm: 1.25 !default;
+$line-height-lg: 2 !default;
+
+$h1-font-size: $font-size-base * 2.5 !default;
+$h2-font-size: $font-size-base * 2 !default;
+$h3-font-size: $font-size-base * 1.75 !default;
+$h4-font-size: $font-size-base * 1.5 !default;
+$h5-font-size: $font-size-base * 1.25 !default;
+$h6-font-size: $font-size-base !default;
+// scss-docs-end font-variables
+
+// scss-docs-start font-sizes
+$font-sizes: (
+    1: $h1-font-size,
+    2: $h2-font-size,
+    3: $h3-font-size,
+    4: $h4-font-size,
+    5: $h5-font-size,
+    6: $h6-font-size,
+) !default;
+// scss-docs-end font-sizes
+
+$variable-prefix: bs- !default; // Deprecated in v5.2.0 for the shorter `$prefix`
+$prefix: $variable-prefix !default;
+
+$input-padding: 0 12px;
+
+$form-control-height-pc: 48px;
+$form-control-height-mo: 3.0769rem;
+
+%form-control {
+    height: $form-control-height-pc;
+}
+
+// scss-docs-start box-shadow-variables
+$box-shadow: 0 0.5rem 1rem rgba($black, 0.15) !default;
+$box-shadow-sm: 0 0.125rem 0.25rem rgba($black, 0.075) !default;
+$box-shadow-lg: 0 1rem 3rem rgba($black, 0.175) !default;
+$box-shadow-inset: inset 0 1px 2px rgba($black, 0.075) !default;
+// scss-docs-end box-shadow-variables
+
+// scss-docs-start spacer-variables-maps
+$spacer: 1rem !default;
+$spacers: (
+    0: 0,
+    1: $spacer * 0.25,
+    2: $spacer * 0.5,
+    3: $spacer,
+    4: $spacer * 1.5,
+    5: $spacer * 3,
+) !default;
+
+$position-values: (
+    0: 0,
+    50: 50%,
+    100: 100%,
+) !default;
+
+$body-bg: $white !default;
+$body-color: $gray-2525 !default;
+$body-text-align: null !default;
+$border-color: $gray-dbdb !default;
+
+$tablet: 1024px;
+$mobile: 768px;
+$basic-font: "Noto Sans KR", sans-serif;
+$point-font: "yg-jalnan", sans-serif;
+
+$palceholder-color: $gray-bbb;
+
+$c-bs: #252525;
+$c-bl1: #252525;
+$c-bl2: #454545;
+$c-g1: #757575;
+$c-w: #fff;
+$c-g2: #999;
+$c-g3: #bbb;
+$c-g4: #aaa;
+$l-bb: #bbb;
+$l-dd: #ddd;
+$l-db: #dbdbdb;
+$l-ee: #eee;
+$bg-color-gray2: #f9f9f9;
+$bg-color-gray: #f6f6f6;
+$chk-w1: 20px;
+$chk-w2: 20px;
+$rdo-w1: 20px;
+$rdo-in-w1: 12px;
+$c-dis: #ed413f;
+$c-danger: #f50000;
+$bg-color1: #191919;
+$text-color: #a8a8a8;
+
+$list-mg-20: 20px;
+$list-mg: 10px;
+$mg-10: 10px;
+
+$border-radius1-pc: 1rem !default;
+$border-radius1-mo: 0.666rem !default;
+
+$small-color: #aaa;
+%radius {
+    border-radius: $border-radius1-pc;
+}
+
+$grid-columns: 12 !default;
+$grid-gutter-width: 1.5rem !default;
+$grid-row-columns: 6 !default;
+
+$gutters: $spacers !default;
+
+// font-size
+$html-font-size-pc: 16px;
+$html-font-size-tablet: 15px;
+$html-font-size-mo: 13px;
+%basic-txt {
+    font-size: $html-font-size-pc;
+}
+
+$gnb-txt-pc: 1.25rem;
+$gnb-txt-mo: 1.466rem;
+%gnb-txt {
+    font-size: $gnb-txt-pc;
+}
+$count-txt-pc: 18px;
+$count-txt-mo: 1.077rem;
+
+%count-txt {
+    font-size: $count-txt-pc;
+}
+%bodyPropertyDefault {
+    word-break: keep-all;
+    letter-spacing: -0.04em;
+}
+
+%flex {
+    display: -webkit-box;
+    display: -moz-box;
+    display: flex;
+    display: -ms-flexbox;
+}
+
+%jc-space-between {
+    justify-content: space-between;
+    -webkit-box-pack: space-between;
+    -ms-flex-pack: space-between;
+}
+%jc-space-around {
+    justify-content: space-around;
+    -webkit-box-pack: space-around;
+    -ms-flex-pack: space-around;
+}
+%jc-center {
+    justify-content: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+}
+%jc-end {
+    justify-content: end;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+}
+%align-items-start {
+    align-items: flex-start;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+}
+%align-items-center {
+    align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+}
+%align-items-end {
+    align-items: flex-end;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+}
+
+%fw-nowrap {
+    -moz-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+}
+
+%button {
+    padding: 0 28px;
+    height: 58px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    background-color: $point;
+    box-shadow: 0 14px 24px rgba(1, 216, 223, 0.36);
+    box-shadow: 0 0.6875rem 1.2rem rgba($color: $point, $alpha: 0.25);
+    border-radius: 29px;
+}
+%button2 {
+    display: block;
+    width: 100%;
+    font-size: 1.25rem;
+    border-radius: 1.95rem;
+    background-color: $point;
+    height: 4rem;
+    line-height: 4rem;
+    color: $white;
+    text-align: center;
+    font-weight: 500;
+    border: none;
+
+    strong {
+        font-weight: 600;
+        color: #fffc00;
+    }
+    &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0.4rem;
+        left: 0;
+        background-color: $point3;
+        border-radius: inherit;
+        box-shadow: 0 0.6875rem 1.2rem rgba($color: #230e76, $alpha: 0.25);
+        z-index: -1;
+    }
+}
+
+// fontsize
+
+$tablet: 1024px;
+$mobile: 768px;
+
+// main visual text
+$main-ttl-pc: 3.125rem;
+$main-ttl-mo: 3.125rem;
+
+%main-ttl {
+    font-size: $main-ttl-pc;
+}
+
+$main-ttl-bot-pc: 1.5rem;
+$main-ttl-bot-mo: 1.5rem;
+
+%main-ttl-bot {
+    font-size: $main-ttl-bot-pc;
+}
+
+$container-ttl-pc: 1.875rem;
+$container-ttl-mo: 1.7692rem;
+$container-lh-pc: 1;
+$container-lh-mo: 1.478;
+%container-ttl {
+    font-size: $container-ttl-pc;
+    line-height: $container-lh-pc;
+}
+$container-ttl-big-pc: 2.375rem;
+$container-ttl-big-mo: 1.7692rem;
+$container-lh-big-pc: 1;
+$container-lh-big-mo: 1;
+%container-ttl-big {
+    font-size: $container-ttl-big-pc;
+    line-height: $container-lh-big-pc;
+}
+
+$sect-ttl-pc: 1.5rem;
+$sect-ttl-mo: 1.3076rem;
+%sect-ttl {
+    font-size: $sect-ttl-pc;
+}
+
+$sect-ttl-big-pc: 1.625rem;
+$sect-ttl-big-mo: 2.375rem;
+%sect-ttl-big {
+    font-size: $sect-ttl-big-pc;
+}
+
+$view-ttl-pc: 1.625rem;
+$view-ttl-mo: 1.625rem;
+%view-ttl {
+    font-size: $view-ttl-pc;
+}
+$view-ttl-big-pc: 1.625rem;
+$view-ttl-big-mo: 1.625rem;
+%view-ttl-big {
+    font-size: $view-ttl-big-pc;
+}
+
+$write-ttl-pc: 1.625rem;
+$write-ttl-mo: 1.625rem;
+%write-ttl {
+    font-size: $write-ttl-pc;
+}
+
+$member-ttl-pc: 2rem;
+$member-ttl-mo: 2rem;
+%member-ttl {
+    font-size: $member-ttl-pc;
+}
+$member-ttl-bot-pc: 1.125rem;
+$member-ttl-bot-mo: 2rem;
+%member-ttl-bot {
+    font-size: $member-ttl-bot-pc;
+}
+$member-ttl-pc: 2rem;
+$member-ttl-mo: 2rem;
+%member-ttl {
+    font-size: $member-ttl-pc;
+}
+
+$member-ttl-big-pc: 2rem;
+$member-ttl-big-mo: 2rem;
+%member-ttl-big {
+    font-size: $member-ttl-big-pc;
+}
+$form-ttl-pc: 1.375rem;
+$form-ttl-mo: 1.375rem;
+%form-ttl {
+    font-size: $form-ttl-pc;
+}
+
+$f-fs-pc: 0.7rem;
+$f-fs-mo: 0.666rem;
+
+%footer-txt {
+    font-size: $f-fs-pc;
+}
+
+@include tablet {
+    %basic-txt {
+        font-size: $html-font-size-tablet;
+    }
+}
+
+@include mobile {
+    %container-ttl {
+        font-size: $container-ttl-mo;
+        line-height: $container-lh-mo;
+    }
+    %container-ttl-big {
+        font-size: $container-ttl-big-mo;
+        line-height: $container-lh-big-mo;
+    }
+
+    %main-ttl {
+        font-size: $main-ttl-mo;
+    }
+
+    %main-ttl-bot {
+        font-size: $main-ttl-bot-mo;
+    }
+    %sect-ttl {
+        font-size: $sect-ttl-mo;
+    }
+    %sect-ttl-big {
+        font-size: $sect-ttl-big-mo;
+    }
+    %member-ttl {
+        font-size: $member-ttl-mo;
+    }
+    %member-ttl-bot {
+        font-size: $member-ttl-bot-mo;
+    }
+    %member-ttl-big {
+        font-size: $member-ttl-big-mo;
+    }
+    %view-ttl {
+        font-size: $view-ttl-mo;
+    }
+    %view-ttl-big {
+        font-size: $view-ttl-big-mo;
+    }
+    %write-ttl {
+        font-size: $write-ttl-mo;
+    }
+    %form-ttl {
+        font-size: $form-ttl-mo;
+    }
+
+    %footer-txt {
+        font-size: $f-fs-mo;
+    }
+    %basic-txt {
+        font-size: $html-font-size-mo;
+    }
+    %gnb-txt {
+        font-size: $gnb-txt-mo;
+    }
+    %form-control {
+        height: $form-control-height-mo;
+    }
+    %count-txt {
+        font-size: $count-txt-mo;
+    }
+
+    %radius {
+        border-radius: $border-radius1-mo;
+    }
+
+    %button {
+        display: block;
+        width: 11.666rem;
+        max-width: 11.666rem;
+        font-size: 1rem;
+        border-radius: 1.5rem;
+        background-color: $point;
+        height: 3rem;
+        line-height: 3rem;
+        color: $white;
+        text-align: center;
+        box-shadow: 0 0.3437rem 0.6rem rgba($color: $point, $alpha: 0.25);
+        font-weight: 600;
+        border: none;
+    }
+
+    %button2 {
+        display: block;
+        width: 100%;
+        font-size: 1rem;
+        border-radius: 1.8333em;
+        background-color: $point;
+        height: 3.66rem;
+        line-height: 3.66rem;
+        color: $white;
+        text-align: center;
+        font-weight: 500;
+        border: none;
+
+        strong {
+            font-weight: 600;
+            color: #fffc00;
+        }
+        &::before {
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0.333rem;
+            left: 0;
+            background-color: $point3;
+            border-radius: inherit;
+            box-shadow: 0 0.3437rem 0.6rem rgba($color: #230e76, $alpha: 0.25);
+            z-index: -1;
+        }
+    }
+}
